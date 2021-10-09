@@ -1,0 +1,37 @@
+# python CP_6.txt
+
+print("Введите размер массива")
+k = input()
+
+a = [0] * int(k)
+
+for i in range(len(a)):
+    i = str(i + 1)
+    print("Введите элемент массива №" + i, end = " ")
+    i = int(i)
+    i = i - 1
+    a[i] = int(input())
+print("")
+
+for i in range(len(a)):
+    print(a[i], end = " ")
+min = a[0]
+
+for i in range(len(a)):
+    if (a[i] < min):
+        min = a[i]          
+min = str(min)
+print("Минимальное значение = " + min)
+
+print("Введите число delta")
+delta = int(input())
+count = 0
+
+
+for i in range(len(a)):
+    if (a[i] == int(min) + delta):
+        print(int(min) + delta)
+        count+=1
+    
+
+print("В данном массиве " + str(count) + " элементов, отличающихся от минимального (" + str(min) + ") на delta (" + str(delta) + ")")
